@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Puzzle & Summoners</title>
+  <meta name="description" content="Link. Summon. Conquer. A tactical link-to-attack puzzle RPG." />
+
+  <!-- Open Graph (공유 썸네일/설명) -->
+  <meta property="og:title" content="Puzzle & Summoners" />
+  <meta property="og:description" content="Link. Summon. Conquer. A tactical link-to-attack puzzle RPG." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#" aria-label="Puzzle & Summoners Home">
+        Puzzle &amp; Summoners
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how">How it plays</a>
+        <a href="#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container hero">
+    <!-- Left copy -->
+    <section class="copy">
+      <h1 class="title">Puzzle &amp;<br/>Summoners</h1>
+      <p class="subtitle">Link. Summon. Conquer.</p>
+
+      <p class="lead">
+        Puzzle &amp; Summoners is a quick-to-learn, hard-to-master puzzle RPG where you link
+        same-type tiles to unleash powerful attacks. Build a team of heroes, chain skills,
+        and outsmart bosses with smart positioning and elemental synergy.
+      </p>
+
+      <h2 id="features" class="section-title">FEATURES</h2>
+      <ul class="list">
+        <li>Link-to-attack puzzle combat (not a basic match-3)</li>
+        <li>Summon and collect heroes, each with unique skills and roles</li>
+        <li>Elemental advantages that change every fight</li>
+        <li>Upgrade, evolve, and customize your squad for your playstyle</li>
+        <li>Dungeons, bosses, and limited-time events with new rewards</li>
+        <li>Smooth, bite-sized sessions?perfect for short breaks</li>
+      </ul>
+
+      <h2 id="how" class="section-title">HOW IT PLAYS</h2>
+      <p class="para">Link tiles to charge your party.</p>
+      <p class="para">Time your skill chains for big damage and clutch saves.</p>
+      <p class="para">Adapt your team to enemy elements and mechanics.</p>
+
+      <p class="fineprint">
+        Optional in-app purchases are available. A network connection may be required for events and account features.
+      </p>
+
+      <div id="support" class="support">
+        <div><span class="label">Support:</span> <a href="mailto:superpulse.help@gmail.com">superpulse.help@gmail.com</a></div>
+        <div>
+          <span class="label">Privacy Policy:</span>
+          <a href="https://storage.thebackend.io/c2edc86b0ca624f277c93664d413b517b7d2e51df034dd8543a4c90d14f3cacd/privacy.html" target="_blank" rel="noreferrer">
+            View
+          </a>
+        </div>
+      </div>
+
+      <div class="cta">
+        <!-- 스토어 링크 준비되면 여기 넣기 -->
+        <a class="btn primary" href="#" aria-disabled="true" title="Coming soon">Coming Soon</a>
+        <a class="btn" href="#features">Learn more</a>
+      </div>
+    </section>
+
+    <!-- Right visual -->
+    <section class="visual" aria-label="App preview">
+      <div class="phone-wrap">
+        <!-- assets/phone.png를 넣으면 이미지로 표시 -->
+        <img class="phone" src="./assets/phone.png" alt="Puzzle & Summoners app preview on a phone" />
+
+        <!-- 이미지가 아직 없으면 아래 div를 써도 됨(가짜 목업) -->
+        <!-- <div class="phone-skeleton" aria-hidden="true"></div> -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <small>? <span id="y"></span> Super Pulse. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // 연도 자동 표기
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
