@@ -1,4 +1,3 @@
-/* styles.css */
 :root{
   --bg: #ffffff;
   --text: #0f172a;
@@ -6,7 +5,6 @@
   --line: rgba(15, 23, 42, 0.08);
   --soft: rgba(15, 23, 42, 0.04);
   --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
-  --radius: 18px;
   --max: 1080px;
 }
 
@@ -27,7 +25,7 @@ a:hover{ text-decoration: underline; }
   margin: 0 auto;
 }
 
-/* subtle grid background */
+/* Grid background */
 .bg-grid{
   position: fixed;
   inset: 0;
@@ -66,10 +64,10 @@ a:hover{ text-decoration: underline; }
 .nav a{ padding: 6px 8px; border-radius: 10px; }
 .nav a:hover{ background: rgba(15,23,42,0.04); text-decoration: none; }
 
-/* Hero layout */
+/* Layout */
 .hero{
   display: grid;
-  grid-template-columns: 1.35fr 0.65fr; /* text wider, device narrower */
+  grid-template-columns: 1.35fr 0.65fr; /* 텍스트 넓게 */
   gap: 48px;
   padding: 56px 0 40px;
   align-items: start;
@@ -118,7 +116,6 @@ a:hover{ text-decoration: underline; }
   font-size: 13px;
   line-height: 1.6;
 }
-
 .support{
   margin-top: 18px;
   display: grid;
@@ -128,7 +125,7 @@ a:hover{ text-decoration: underline; }
 }
 .label{ color: rgba(71,85,105,0.85); }
 
-/* CTA buttons */
+/* CTA */
 .cta{
   display: flex;
   gap: 10px;
@@ -143,7 +140,6 @@ a:hover{ text-decoration: underline; }
   border-radius: 12px;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.65);
-  text-decoration: none;
   font-weight: 600;
   font-size: 14px;
 }
@@ -159,18 +155,17 @@ a:hover{ text-decoration: underline; }
   justify-content: center;
   align-items: flex-start;
 }
-
 .phone-wrap{
-  width: min(360px, 100%);   /* controls how big the device looks */
+  width: min(360px, 100%);
   margin-top: 18px;
 }
 
-/* ===== Device mockup layering ===== */
+/* ===== 핵심: 목업 + 스크린샷 겹치기 ===== */
 .device{
   position: relative;
   width: 100%;
 
-  /* Adjust these 4 variables to match YOUR mockup frame */
+  /* 여기 3개만 조절하면 "화면 위치"가 딱 맞아짐 */
   --inset-x: 10.5%;
   --inset-top: 9.0%;
   --inset-bottom: 7.0%;
@@ -181,31 +176,32 @@ a:hover{ text-decoration: underline; }
   width: 100%;
   height: auto;
   display: block;
-  box-shadow: var(--shadow);
   border-radius: 28px;
+  box-shadow: var(--shadow);
 }
 
-.device-shot{
+/* 화면 영역(클리핑 박스) */
+.device-screen{
   position: absolute;
   left: var(--inset-x);
   right: var(--inset-x);
   top: var(--inset-top);
   bottom: var(--inset-bottom);
 
-  width: auto;
-  height: auto;
-  display: block;
-
-  object-fit: cover;
-  object-position: center;
+  overflow: hidden;                 /* 화면 밖은 잘라냄 */
   border-radius: var(--screen-radius);
+
+  /* 요청: 스크린샷이 목업 위로 올라오도록 */
+  z-index: 2;
 }
 
-/* (optional) small hint text */
-.hint{
-  margin: 10px 0 0;
-  font-size: 12px;
-  color: rgba(71,85,105,0.85);
+/* 실제 스크린샷 */
+.device-shot{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;                /* 꽉 채우기 */
+  object-position: center;
 }
 
 /* Footer */
