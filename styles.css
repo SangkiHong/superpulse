@@ -1,7 +1,8 @@
+/* styles.css */
 :root{
   --bg: #ffffff;
-  --text: #0f172a;     /* slate-900 느낌 */
-  --muted: #475569;    /* slate-600 */
+  --text: #0f172a;
+  --muted: #475569;
   --line: rgba(15, 23, 42, 0.08);
   --soft: rgba(15, 23, 42, 0.04);
   --shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
@@ -26,7 +27,7 @@ a:hover{ text-decoration: underline; }
   margin: 0 auto;
 }
 
-/* 은은한 그리드 배경 */
+/* subtle grid background */
 .bg-grid{
   position: fixed;
   inset: 0;
@@ -68,12 +69,13 @@ a:hover{ text-decoration: underline; }
 /* Hero layout */
 .hero{
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 56px;
+  grid-template-columns: 1.35fr 0.65fr; /* text wider, device narrower */
+  gap: 48px;
   padding: 56px 0 40px;
   align-items: start;
 }
 
+/* Left copy */
 .title{
   font-size: 56px;
   line-height: 1.05;
@@ -151,60 +153,59 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 10px 30px rgba(15,23,42,0.10);
 }
 
-/* Phone visual */
+/* Right visual */
 .visual{
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 }
+
 .phone-wrap{
-  width: min(380px, 100%);
+  width: min(360px, 100%);   /* controls how big the device looks */
   margin-top: 18px;
 }
-.phone{
+
+/* ===== Device mockup layering ===== */
+.device{
+  position: relative;
+  width: 100%;
+
+  /* Adjust these 4 variables to match YOUR mockup frame */
+  --inset-x: 10.5%;
+  --inset-top: 9.0%;
+  --inset-bottom: 7.0%;
+  --screen-radius: 26px;
+}
+
+.device-frame{
   width: 100%;
   height: auto;
   display: block;
+  box-shadow: var(--shadow);
   border-radius: 28px;
-  box-shadow: var(--shadow);
-  background: #0b1220;
-  /* 추가 추천 */
-  object-fit: cover;     /* 이미지가 영역을 꽉 채우게 */
-  object-position: center;
 }
 
-/* 대체 목업(이미지 없을 때) */
-.phone-skeleton{
-  width: 100%;
-  aspect-ratio: 9 / 19.5;
-  border-radius: 38px;
-  background: linear-gradient(180deg, #111827, #0b1220);
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255,255,255,0.06);
-}
+.device-shot{
+  position: absolute;
+  left: var(--inset-x);
+  right: var(--inset-x);
+  top: var(--inset-top);
+  bottom: var(--inset-bottom);
 
-.device{
-  width: 300px;
-  height: 600px;
-  border: 14px solid #1f2937;
-  border-radius: 40px;
-  background: #1f2937;
-  position: relative;
-  box-shadow: var(--shadow);
-}
-
-.device-screen{
-  width: 272px;
-  height: 572px;
-  border-radius: 32px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.device-screen img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
   display: block;
+
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--screen-radius);
+}
+
+/* (optional) small hint text */
+.hint{
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: rgba(71,85,105,0.85);
 }
 
 /* Footer */
@@ -227,6 +228,6 @@ a:hover{ text-decoration: underline; }
     padding-top: 38px;
   }
   .title{ font-size: 44px; }
-  .nav{ display: none; } /* 모바일에서 상단 링크 숨김(원하면 햄버거로 바꿀 수 있음) */
+  .nav{ display: none; }
   .phone-wrap{ width: min(420px, 100%); }
 }

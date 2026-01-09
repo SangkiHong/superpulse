@@ -1,13 +1,14 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Puzzle & Summoners</title>
+  <title>Puzzle &amp; Summoners</title>
   <meta name="description" content="Link. Summon. Conquer. A tactical link-to-attack puzzle RPG." />
 
-  <!-- Open Graph (공유 썸네일/설명) -->
-  <meta property="og:title" content="Puzzle & Summoners" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Puzzle &amp; Summoners" />
   <meta property="og:description" content="Link. Summon. Conquer. A tactical link-to-attack puzzle RPG." />
   <meta property="og:type" content="website" />
 
@@ -22,7 +23,7 @@
       <a class="brand" href="#" aria-label="Puzzle & Summoners Home">
         Puzzle &amp; Summoners
       </a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="#features">Features</a>
         <a href="#how">How it plays</a>
         <a href="#support">Support</a>
@@ -62,7 +63,10 @@
       </p>
 
       <div id="support" class="support">
-        <div><span class="label">Support:</span> <a href="mailto:superpulse.help@gmail.com">superpulse.help@gmail.com</a></div>
+        <div>
+          <span class="label">Support:</span>
+          <a href="mailto:superpulse.help@gmail.com">superpulse.help@gmail.com</a>
+        </div>
         <div>
           <span class="label">Privacy Policy:</span>
           <a href="https://storage.thebackend.io/c2edc86b0ca624f277c93664d413b517b7d2e51df034dd8543a4c90d14f3cacd/privacy.html" target="_blank" rel="noreferrer">
@@ -72,7 +76,6 @@
       </div>
 
       <div class="cta">
-        <!-- 스토어 링크 준비되면 여기 넣기 -->
         <a class="btn primary" href="#" aria-disabled="true" title="Coming soon">Coming Soon</a>
         <a class="btn" href="#features">Learn more</a>
       </div>
@@ -80,12 +83,23 @@
 
     <!-- Right visual -->
     <section class="visual" aria-label="App preview">
-  <div class="device">
-    <div class="device-screen">
-      <img src="./assets/mockup.png" alt="Game screenshot" />
-    </div>
-  </div>
-</section>
+      <div class="phone-wrap">
+        <div class="device">
+          <!-- screenshot (below) -->
+          <img class="device-shot" src="./assets/screenshot.png" alt="Gameplay screenshot" />
+          <!-- frame (above) -->
+          <img class="device-frame" src="./assets/mockup.png" alt="" aria-hidden="true" />
+        </div>
+
+        <!-- 로딩/디버그: 이미지 경로 확인용(필요 없으면 삭제) -->
+        <!--
+        <p class="hint">
+          If images don’t show, check:
+          /assets/mockup.png and /assets/screenshot.png
+        </p>
+        -->
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -95,7 +109,6 @@
   </footer>
 
   <script>
-    // 연도 자동 표기
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
