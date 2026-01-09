@@ -167,6 +167,9 @@ a:hover{ text-decoration: underline; }
   border-radius: 28px;
   box-shadow: var(--shadow);
   background: #0b1220;
+  /* 추가 추천 */
+  object-fit: cover;     /* 이미지가 영역을 꽉 채우게 */
+  object-position: center;
 }
 
 /* 대체 목업(이미지 없을 때) */
@@ -177,6 +180,31 @@ a:hover{ text-decoration: underline; }
   background: linear-gradient(180deg, #111827, #0b1220);
   box-shadow: var(--shadow);
   border: 1px solid rgba(255,255,255,0.06);
+}
+
+.device{
+  width: 300px;
+  height: 600px;
+  border: 14px solid #1f2937;
+  border-radius: 40px;
+  background: #1f2937;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.device-screen{
+  width: 272px;
+  height: 572px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.device-screen img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Footer */
