@@ -350,7 +350,7 @@ img {
 
 .device {
   position: relative;
-  width: 100%;
+  width: 85%;
   animation: float 6s ease-in-out infinite;
 }
 
@@ -365,18 +365,20 @@ img {
 
 .device-frame {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   border-radius: 28px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  position: relative;
 }
 
 .device-screen {
   position: absolute;
-  left: 10.5%;
-  right: 10.5%;
-  top: 9%;
-  bottom: 7%;
+  left: 6.5%;
+  right: 6.5%;
+  top: 0%;
+  bottom: 0%;
   overflow: hidden;
   border-radius: 26px;
   z-index: 2;
