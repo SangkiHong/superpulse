@@ -363,6 +363,7 @@ img {
   }
 }
 
+/* 프레임은 absolute + scale로 키움 */
 .device-frame{
   position: absolute;
   inset: 0;              /* 부모(device)를 꽉 채움 */
@@ -375,6 +376,13 @@ img {
   pointer-events: none;  /* 클릭 방해 방지 */
   filter: drop-shadow(0 30px 80px rgba(0,0,0,0.5));
   border-radius: 28px;   /* 필요하면 유지 */
+}
+
+/* 프레임이 absolute로 빠지면, device가 높이를 잃을 수 있어서 ‘기준 이미지’ 하나 둠 */
+.device::before{
+  content:"";
+  display:block;
+  padding-top: 200%; /* 임시 비율. 아래 '비율 맞추기'에서 수정 */
 }
 
 .device-screen {
